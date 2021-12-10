@@ -10,21 +10,21 @@ using MediatR;
 
 namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
 {
-    public class GetFirstSurveyDetailsQueryHandler : IRequestHandler<GetFirstSurveyDetailsQuery,List<FirstSurveyDetailsVm>>
+    public class GetFirstSurveyDetailsQueryHandler : IRequestHandler<GetFirstSurveyDetailsQuery,FirstSurveyDetailsVm>
     {
         private readonly IMapper _mapper;
-        private readonly IZoneRepository _firstSurveyDetailsRepository;
+        private readonly IFirstSurveyRepository _firstSurveyRepository;
 
-        public GetFirstSurveyDetailsQueryHandler(IMapper mapper, IZoneRepository firstSurveyDetailsRepository)
+        public GetFirstSurveyDetailsQueryHandler(IMapper mapper, IFirstSurveyRepository firstSurveyRepository)
         {
-            _firstSurveyDetailsRepository = firstSurveyDetailsRepository;
+            _firstSurveyRepository = firstSurveyRepository;
             _mapper = mapper;
         }
 
-        public async Task<List<FirstSurveyDetailsVm>> Handle(GetFirstSurveyDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<FirstSurveyDetailsVm> Handle(GetFirstSurveyDetailsQuery request, CancellationToken cancellationToken)
         {
-            var firstSurveyDetailsList = await _firstSurveyDetailsRepository.GetListOfAll();
-            return _mapper.Map<List<FirstSurveyDetailsVm>>(firstSurveyDetailsList);
+            var firstSurveyDetails = await _firstSurveyRepository.GetByIdAsync(request.id);
+            return _mapper.Map<FirstSurveyDetailsVm>(firstSurveyDetails);
         }
     }
 }
