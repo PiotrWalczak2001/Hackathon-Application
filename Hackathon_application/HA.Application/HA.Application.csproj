@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Features\PriceMultiplier\Commands\" />
+    <Folder Include="Features\Surveys\First\Commands\" />
+    <Folder Include="Features\Surveys\Second\Commands\" />
     <Folder Include="Features\Zone\Commands\" />
   </ItemGroup>
 

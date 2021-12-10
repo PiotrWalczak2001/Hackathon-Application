@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
 {
-    class FirstSurvayDetailsVm
+    class SecondSurvayDetailsVm
     {
     }
 }
