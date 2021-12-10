@@ -11,20 +11,20 @@ using MediatR;
 
 namespace HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails
 {
-    public class GetSecondSurveyDetailsQueryHandler : IRequestHandler<GetSecondSurveyDetailsQuery, List<SecondSurveyDetailsVm>>
+    public class GetSecondSurveyDetailsQueryHandler : IRequestHandler<GetSecondSurveyDetailsQuery, SecondSurveyDetailsVm>
     {
         private readonly IMapper _mapper;
-        private readonly ISecondSurveyDetailsRepository _secondSurveyDetailsRepository;
+        private readonly ISecondSurveyRepository _secondSurveyRepository;
 
-        public GetSecondSurveyDetailsQueryHandler(IMapper mapper, ISecondSurveyDetailsRepository secondSurveyDetailsRepository)
+        public GetSecondSurveyDetailsQueryHandler(IMapper mapper, ISecondSurveyRepository secondSurveyDetailsRepository)
         {
-            _secondSurveyDetailsRepository = secondSurveyDetailsRepository;
+            _secondSurveyRepository = secondSurveyDetailsRepository;
             _mapper = mapper;
         }
-        public async Task<List<SecondSurveyDetailsVm>> Handle(GetSecondSurveyDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<SecondSurveyDetailsVm> Handle(GetSecondSurveyDetailsQuery request, CancellationToken cancellationToken)
         {
-            var secondSurveyDetailsList = await _secondSurveyDetailsRepository.GetListOfAll();
-            return _mapper.Map<List<SecondSurveyDetailsVm>>(secondSurveyDetailsList);
+            var secondSurveyDetails = await _secondSurveyRepository.GetByIdAsync(request.id);
+            return _mapper.Map<SecondSurveyDetailsVm>(secondSurveyDetails);
         }
     }
 }

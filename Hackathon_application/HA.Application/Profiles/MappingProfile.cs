@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using HA.Application.Features.PriceMultiplier.Queries.GetAllMultipliers;
 using HA.Application.Features.Zone.Queries.GetZoneById;
-
+using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
+using HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails;
 namespace HA.Application.Profiles
 {
     public class MappingProfile : Profile
@@ -19,6 +20,9 @@ namespace HA.Application.Profiles
             CreateMap<Zone, ZoneDetailsVm>().ReverseMap();
 
             CreateMap<PriceMultiplier, MultiplierListVm>().ReverseMap();
+
+            CreateMap<SurveyFirst, FirstSurveyDetailsVm>().ReverseMap();
+            CreateMap<SurveySecond, SecondSurveyDetailsVm>().ReverseMap();
         }
     }
 }
