@@ -17,6 +17,7 @@ namespace HA.Persistence
         public DbSet<Zone> Zones { get; set; }
         public DbSet<PriceMultiplier> PriceMultipliers { get; set; }
         public DbSet<SurveyFirst> FirstSurveys { get; set; }
+        public DbSet<SurveyFirst> SecondSurveys { get; set; }
         public DbSet<ThresholdFirst> FirstThresholds { get; set; }
         public DbSet<ThresholdSecond> SecondThresholds { get; set; }
 

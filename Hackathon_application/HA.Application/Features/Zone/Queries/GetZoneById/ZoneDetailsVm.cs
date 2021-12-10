@@ -8,5 +8,9 @@ namespace HA.Application.Features.Zone.Queries.GetZoneById
 {
     public class ZoneDetailsVm
     {
+        public string ZoneName { get; set; }
+        public decimal DefaultPrice { get; set; }
+        public Guid SurveyFirstId { get; set; }
+        public Guid SurveySecondId { get; set; }
     }
 }

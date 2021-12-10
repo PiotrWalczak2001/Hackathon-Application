@@ -8,6 +8,7 @@ namespace HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails
 {
     public class SecondSurveyDetailsVm
     {
+        public Guid Id { get; set; }
         public string Survey { get; set; }
     }
 }

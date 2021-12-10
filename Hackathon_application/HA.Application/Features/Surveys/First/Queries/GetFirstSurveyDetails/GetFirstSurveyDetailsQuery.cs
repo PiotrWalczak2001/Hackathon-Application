@@ -9,5 +9,6 @@ namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
 {
     public class GetFirstSurveyDetailsQuery : IRequest<List<FirstSurveyDetailsVm>>
     {
+        
     }
 }

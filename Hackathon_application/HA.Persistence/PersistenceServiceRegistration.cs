@@ -20,6 +20,9 @@ namespace HA.Persistence
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
             services.AddScoped<IZoneRepository, ZoneRepository>();
+            services.AddScoped<IPriceMultiplierRepository, PriceMultiplierRepository>();
+            services.AddScoped<ISurveyFirstRepository, SurveyFirstRepository>();
+            services.AddScoped<ISurveySecondRepository, SurveySecondRepository>();
 
             return services;
         }
