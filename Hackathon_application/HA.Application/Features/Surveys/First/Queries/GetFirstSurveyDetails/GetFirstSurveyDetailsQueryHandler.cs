@@ -13,9 +13,9 @@ namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
     public class GetFirstSurveyDetailsQueryHandler : IRequestHandler<GetFirstSurveyDetailsQuery,FirstSurveyDetailsVm>
     {
         private readonly IMapper _mapper;
-        private readonly IFirstSurveyRepository _firstSurveyRepository;
+        private readonly ISurveyFirstRepository _firstSurveyRepository;
 
-        public GetFirstSurveyDetailsQueryHandler(IMapper mapper, IFirstSurveyRepository firstSurveyRepository)
+        public GetFirstSurveyDetailsQueryHandler(IMapper mapper, ISurveyFirstRepository firstSurveyRepository)
         {
             _firstSurveyRepository = firstSurveyRepository;
             _mapper = mapper;
@@ -23,7 +23,7 @@ namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
 
         public async Task<FirstSurveyDetailsVm> Handle(GetFirstSurveyDetailsQuery request, CancellationToken cancellationToken)
         {
-            var firstSurveyDetails = await _firstSurveyRepository.GetByIdAsync(request.id);
+            var firstSurveyDetails = await _firstSurveyRepository.GetByIdAsync(request.FirstSurveyId);
             return _mapper.Map<FirstSurveyDetailsVm>(firstSurveyDetails);
         }
     }

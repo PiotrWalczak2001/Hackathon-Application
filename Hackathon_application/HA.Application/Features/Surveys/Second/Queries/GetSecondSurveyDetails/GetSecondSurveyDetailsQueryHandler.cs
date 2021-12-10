@@ -14,16 +14,16 @@ namespace HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails
     public class GetSecondSurveyDetailsQueryHandler : IRequestHandler<GetSecondSurveyDetailsQuery, SecondSurveyDetailsVm>
     {
         private readonly IMapper _mapper;
-        private readonly ISecondSurveyRepository _secondSurveyRepository;
+        private readonly ISurveySecondRepository _secondSurveyRepository;
 
-        public GetSecondSurveyDetailsQueryHandler(IMapper mapper, ISecondSurveyRepository secondSurveyDetailsRepository)
+        public GetSecondSurveyDetailsQueryHandler(IMapper mapper, ISurveySecondRepository secondSurveyDetailsRepository)
         {
             _secondSurveyRepository = secondSurveyDetailsRepository;
             _mapper = mapper;
         }
         public async Task<SecondSurveyDetailsVm> Handle(GetSecondSurveyDetailsQuery request, CancellationToken cancellationToken)
         {
-            var secondSurveyDetails = await _secondSurveyRepository.GetByIdAsync(request.id);
+            var secondSurveyDetails = await _secondSurveyRepository.GetByIdAsync(request.SecondSurveyId);
             return _mapper.Map<SecondSurveyDetailsVm>(secondSurveyDetails);
         }
     }

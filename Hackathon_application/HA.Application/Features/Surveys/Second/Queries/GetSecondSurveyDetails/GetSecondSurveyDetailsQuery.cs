@@ -7,6 +7,6 @@ namespace HA.Application.Features.Surveys.Second.Queries.GetSecondSurveyDetails
 {
     public class GetSecondSurveyDetailsQuery : IRequest<SecondSurveyDetailsVm>
     {
-        public Guid id;
+        public Guid SecondSurveyId { get; set; }
     }
 }
