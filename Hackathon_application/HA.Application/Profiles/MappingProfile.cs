@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HA.Application.Features.PriceMultiplier.Queries.GetAllMultipliers;
 
 namespace HA.Application.Profiles
 {
@@ -14,6 +15,7 @@ namespace HA.Application.Profiles
         public MappingProfile()
         {
             CreateMap<Zone, ZoneListVm>().ReverseMap();
+            CreateMap<PriceMultiplier, MultiplierListVm>().ReverseMap();
         }
     }
 }

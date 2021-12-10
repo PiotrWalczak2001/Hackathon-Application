@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HA.Domain.Enitites;
 
 namespace HA.Application.Features.PriceMultiplier.Queries.GetAllMultipliers
 {
-    class MultiplierListVm
+    public class MultiplierListVm 
     {
+        public string Name { get; set; }
+        public float Multiplier { get; set; }
+        public Guid ThresholdFirstId { get; set; } // PM 10
+        public Guid ThresholdSecondId { get; set; } // PM 2.5
     }
 }
