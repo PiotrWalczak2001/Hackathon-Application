@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails
 {
-    class SecondSurvayDetailsVm
+    public class FirstSurveyDetailsVm
     {
+        public string Survey { get; set; }
     }
 }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
+using MediatR;
 
-namespace HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails
+namespace HA.Application.Features.Surveys.Second.Queries.GetSecondSurveyDetails
 {
-    class GetSecondSurveyDetailsQuery
+    public class GetSecondSurveyDetailsQuery : IRequest<List<SecondSurveyDetailsVm>>
     {
     }
 }
