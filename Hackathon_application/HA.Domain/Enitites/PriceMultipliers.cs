@@ -11,7 +11,9 @@ namespace HA.Domain.Enitites
     {
         public string Name { get; set; }
         public float Multiplier { get; set; }
-        public string ThresholdFirst { get; set; }
-        public string ThresholdSecond { get; set; }
+        public Guid ThresholdFirstId { get; set; } // PM 10
+        public ThresholdFirst ThresholdFirst { get; set; } // PM 10
+        public Guid ThresholdSecondId { get; set; } // PM 2.5
+        public ThresholdSecond ThresholdSecond { get; set; } // PM 2.5
     }
 }

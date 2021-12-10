@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HA.Application.Features.Zone.Queries.GetZoneById
 {
-    class ZoneDetailsVm
+    public class ZoneDetailsVm
     {
     }
 }

@@ -10,6 +10,10 @@ namespace HA.Domain.Enitites
     public class Zone : AuditableEntity
     {
         public string ZoneName { get; set;}
-        public string Contamination { get; set; }
+        public decimal DefaultPrice { get; set; }
+        public Guid SurveyFirstId { get; set; }
+        public SurveyFirst SurveyFirst { get; set; }
+        public Guid SurveySecondId { get; set; }
+        public SurveySecond SurveySecond { get; set; }
     }
 }
