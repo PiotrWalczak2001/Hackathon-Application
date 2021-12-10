@@ -28,6 +28,11 @@ namespace HA.Api
             services.AddApplicationServices();
             services.AddPersistenceServices(Configuration);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
             services.AddControllers();
         }
 
@@ -61,6 +66,8 @@ namespace HA.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "HackathonApp API");
             });
+
+            app.UseCors("Open");
 
             app.UseEndpoints(endpoints =>
             {
