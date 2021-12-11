@@ -13,6 +13,8 @@ namespace HA.UI.Profiles
         public Mappings()
         {
             CreateMap<Zone, ZoneListViewModel>().ReverseMap();
+            CreateMap<Zone, FakeDataListViewModel>().ReverseMap();
+
         }
     }
 }

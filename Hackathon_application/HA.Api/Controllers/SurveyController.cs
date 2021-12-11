@@ -66,5 +66,22 @@ namespace HA.Api.Controllers
             }
             return Ok(allCalculatedZonesVms);
         }
+
+        [HttpGet("takeAllFakeSurveyss")]
+        public async Task<ActionResult> TakeAllFakeSurveyss()
+        {
+            var zones = await _mediator.Send(new GetAllZonesQuery());
+            List<CalculatedZoneVm> allCalculatedZonesVms = new List<CalculatedZoneVm>();
+            foreach (var zone in zones)
+            {
+                var queryFirst = new TakeFakeSurveyFirstQuery() { ZoneId = zone.Id };
+                await _mediator.Send(queryFirst);
+                var querySecond = new TakeFakeSurveySecondQuery() { ZoneId = zone.Id };
+                await _mediator.Send(querySecond);
+                var queryToCalculate = new CalculateTotalPriceQuery() { ZoneId = zone.Id };
+                allCalculatedZonesVms.Add(await _mediator.Send(queryToCalculate));
+            }
+            return NoContent();
+        }
     }
 }

@@ -5,20 +5,11 @@
         <div class="@NavMenuCssClass">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <NavLink class="nav-link text-dark" href="counter">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                    <NavLink class="nav-link text-dark" href="https://localhost:44353/api/survey/takeAllFakeSurveyss">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Take surveys
                     </NavLink>
                 </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link text-dark" href="fetchdata">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-                    </NavLink>
-                    </li>
-                    <li class="nav-item">
-                        <NavLink class="nav-link text-dark" href="mainmap">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Map
-                </NavLink>
-            </li>
+                
             </ul>
         </div>
     </div>
@@ -30,5 +21,5 @@
     string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
 
     string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
-
+    
 }
