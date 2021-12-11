@@ -29,82 +29,6 @@
         border-top: 0 !important;
         border-bottom: 1px solid #dee2e6 !important;
     }
-
-    .dot {
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        border: 1px solid black;
-    }
-
-        .dot p {
-            padding-left: 15%;
-        }
-
-    .green_dot {
-        background: green;
-    }
-
-    .yellow_dot {
-        background: yellow;
-    }
-
-    .red_dot {
-        background: red;
-    }
-
-    .brown_dot {
-        background: brown;
-    }
-
-    .black_dot {
-        background: black;
-    }
-
-    #s9 {
-        top: 33vh;
-        left: 36vw;
-    }
-
-    #s8 {
-        top: 47vh;
-        left: 38vw;
-    }
-
-    #s7 {
-        top: 29vh;
-        left: 32vw;
-    }
-
-    #s6 {
-        top: 27vh;
-        left: 41vw;
-    }
-
-    #s5 {
-        top: 47vh;
-        left: 44.5vw;
-    }
-
-    #s4 {
-        top: 56vh;
-        left: 28vw;
-    }
-
-    #s3 {
-        top: 39vh;
-        left: 49vw;
-    }
-
-    #s2 {
-        top: 20vh;
-        left: 47vw;
-    }
-
-    #s1 {
-        top: 16vh;
-        left: 27vw;
-    }
 </style>
 
 @if (Zones == null)
@@ -116,60 +40,15 @@ else
 
 <div class="container_main">
     <div class="map_container">
-        <img src="https://iv.pl/images/11dac6eac707fb1d25c39a9704736385.png" class="map_main" alt="Kraków strefy parkowania" border="0" />
-        <a>
-            <div class="dot position-absolute" id="s9">
-                <p>s9</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s8">
-                <p>s8</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s7">
-                <p>s7</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s6">
-                <p>s6</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s5">
-                <p>s5</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s4">
-                <p>s4</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s3">
-                <p>s3</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s2">
-                <p>s2</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s1">
-                <p>s1</p>
-            </div>
-        </a>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1oRY2pnth-HEjiNt85d26lpaTDLz0nTmx&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
     <div class="data_container">
-        <button type="submit" @onclick="LoadData">Take new measurement</button>
+        <button type="submit" @onclick="LoadData">Get new data</button>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nazwa strefy</th>
-                    <th>Aktualne ceny w strefach</th>
+                    <th>Zone code</th>
+                    <th>Current price in the zone</th>
                 </tr>
             </thead>
             <tbody>

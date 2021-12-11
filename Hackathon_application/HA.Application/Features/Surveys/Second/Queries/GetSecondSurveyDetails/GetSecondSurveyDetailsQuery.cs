@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
 using MediatR;
 

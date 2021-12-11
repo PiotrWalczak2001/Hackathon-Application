@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using HA.Application.Features.PriceMultiplier.Queries.GetAllMultipliers;
-using HA.Application.Features.Zone.Queries.GetAllZones;
 using MediatR;
 
 namespace HA.Api.Controllers

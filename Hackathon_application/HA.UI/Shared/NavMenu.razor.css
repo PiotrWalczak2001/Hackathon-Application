@@ -10,7 +10,23 @@
 .navbar-brand {
     font-size: 1.1rem;
 }
+#navbar_main {
+    padding: 0;
+}
 
+#this_one_container {
+    width: auto;
+}
+
+.navbar_items {
+    display: table;
+    margin: 0 auto;
+}
+
+.logo_nav {
+    height: 50px;
+    width: 50px;
+}
 .oi {
     width: 2rem;
     font-size: 1.1rem;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails;
 using HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst;
@@ -10,7 +9,6 @@ using HA.Application.Features.Zone.Queries.CalculateTotalPrice;
 using HA.Application.Features.Zone.Queries.GetAllZones;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace HA.Api.Controllers
 {
