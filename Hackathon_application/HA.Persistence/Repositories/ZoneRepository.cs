@@ -15,12 +15,26 @@ namespace HA.Persistence.Repositories
 
         }
 
-        public void RefreshSurveys(Guid zoneId)
+        public async Task CalculateTotalPrice(Guid zoneId)
         {
-            var newSurvey = _dbContext.FirstSurveys.Where(s => s.ZoneId == zoneId).OrderBy(x => x.SurveyDate).FirstOrDefault();
-            var zoneToUpdate = _dbContext.Zones.FirstOrDefault(z => z.Id == zoneId);
-            zoneToUpdate.SurveyFirstId = newSurvey.Id;
+            
         }
+
+        public async Task RefreshFirstSurveys(Guid zoneId, Guid newSurveyGuid)
+        {
+            var zoneToUpdate = _dbContext.Zones.FirstOrDefault(z => z.Id == zoneId);
+            zoneToUpdate.SurveyFirstId = newSurveyGuid;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task RefreshSecondSurveys(Guid zoneId, Guid newSurveyGuid)
+        {
+            var zoneToUpdate = _dbContext.Zones.FirstOrDefault(z => z.Id == zoneId);
+            zoneToUpdate.SurveySecondId = newSurveyGuid;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        
 
     }
 }

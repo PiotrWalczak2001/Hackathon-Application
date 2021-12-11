@@ -20,6 +20,7 @@ namespace HA.Persistence.Repositories
             Random rnd = new Random();
             var newSurvey = new SurveyFirst { Id = Guid.NewGuid(), SurveyDate = DateTime.Now, Survey = rnd.Next(1,500).ToString(), ZoneId = zoneId };
             await _dbContext.FirstSurveys.AddAsync(newSurvey);
+            await _dbContext.SaveChangesAsync();
             return newSurvey;
         }
     }

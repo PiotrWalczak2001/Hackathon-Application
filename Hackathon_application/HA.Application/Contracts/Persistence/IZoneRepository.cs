@@ -9,6 +9,8 @@ namespace HA.Application.Contracts.Persistence
 {
     public interface IZoneRepository : IAsyncRepository<Zone>
     {
-        void RefreshSurveys(Guid zoneId);
+        Task RefreshFirstSurveys(Guid zoneId, Guid newSurveyGuid);
+        Task RefreshSecondSurveys(Guid zoneId, Guid newSurveyGuid);
+        Task CalculateTotalPrice(Guid zoneId);
     }
 }
