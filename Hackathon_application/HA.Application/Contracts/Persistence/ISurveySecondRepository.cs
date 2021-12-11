@@ -9,5 +9,6 @@ namespace HA.Application.Contracts.Persistence
 {
     public interface ISurveySecondRepository : IAsyncRepository<SurveySecond>
     {
+        Task<SurveySecond> TakeFakeSurveySecond();
     }
 }

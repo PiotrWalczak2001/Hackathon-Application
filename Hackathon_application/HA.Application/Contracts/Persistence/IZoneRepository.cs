@@ -9,5 +9,6 @@ namespace HA.Application.Contracts.Persistence
 {
     public interface IZoneRepository : IAsyncRepository<Zone>
     {
+        void RefreshSurveys(Guid zoneId);
     }
 }

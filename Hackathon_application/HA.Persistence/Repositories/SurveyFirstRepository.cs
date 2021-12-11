@@ -14,5 +14,13 @@ namespace HA.Persistence.Repositories
         {
 
         }
+
+        public async Task<SurveyFirst> TakeFakeSurveyFirst()
+        {
+            Random rnd = new Random();
+            var newSurvey = new SurveyFirst { Id = Guid.NewGuid(), SurveyDate = DateTime.Now, Survey = rnd.Next(1,500).ToString() };
+            await _dbContext.FirstSurveys.AddAsync(newSurvey);
+            return newSurvey;
+        }
     }
 }

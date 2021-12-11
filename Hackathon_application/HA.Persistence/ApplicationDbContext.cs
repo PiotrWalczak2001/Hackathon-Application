@@ -17,7 +17,7 @@ namespace HA.Persistence
         public DbSet<Zone> Zones { get; set; }
         public DbSet<PriceMultiplier> PriceMultipliers { get; set; }
         public DbSet<SurveyFirst> FirstSurveys { get; set; }
-        public DbSet<SurveyFirst> SecondSurveys { get; set; }
+        public DbSet<SurveySecond> SecondSurveys { get; set; }
         public DbSet<ThresholdFirst> FirstThresholds { get; set; }
         public DbSet<ThresholdSecond> SecondThresholds { get; set; }
 
@@ -28,110 +28,182 @@ namespace HA.Persistence
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("094234BEB6C7438AAE175FA53324F5BB"),
-                Survey = "21"
+                Survey = "21",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),
             });
             //1.2
-            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
+            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("2B9B964F85EF4E248BD339CD8198AAF8"),
-                Survey = "62"
+                Survey = "62",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("19752857EA39422990F8A14F0695B042"),
             });
+
             //1.3
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("80D8E42EDD52463E823DB9A0B887530B"),
-                Survey = "180"
+                Survey = "180",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("0363C650FC4F4DF4B0A4912DC7CA3151"),
             });
             //1.4
-            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
+            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("010067D643B24F19BA0F40A175BD8185"),
-                Survey = "250"
+                Survey = "250",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("043CE18440894614BAC8A1BD300C8A7C"),
             });
             //1.5
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("CF680241854C48F2925CD15C49ED1AF1"),
-                Survey = "87"
+                Survey = "87",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("68EF94103A7C443DAB0C1E2B15939415"),
             });
             //1.6
-            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
+            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("DEDDF733AB674737A7B6EC17A6E4B3AD"),
-                Survey = "19"
+                Survey = "19",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("7EE1120989FC43619D647941A21BAA23"),
             });
             //1.7
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("990B0236B37741F3BB06BDAEC289BE2D"),
-                Survey = "137"
+                Survey = "137",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("8FD9EC8F2BC34F369D700E6AD5B10B14"),
             });
             //1.8
-            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
-            {
-                Id = Guid.Parse("CBE23EFD4DBB4CD4B83AAE353DB0D954"),
-                Survey = "300"
-            });
-            //1.9
-            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
-            {
-                Id = Guid.Parse("B2AF4BB0708E4B908A90E1C25A28E9FA"),
-                Survey = "1"
-            });
-            //2.1
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
+                Id = Guid.Parse("CBE23EFD4DBB4CD4B83AAE353DB0D954"),
+                Survey = "300",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("3529A503C48F47ADAD439FDCB8744D89"),
+            });
+            //1.9
+            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
+            {
+                Id = Guid.Parse("B2AF4BB0708E4B908A90E1C25A28E9FA"),
+                Survey = "1",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("CF169ADBCDCD4F2E963534B48235FBA5"),
+            });
+            //2.1
+            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
+            {
                 Id = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),
-                Survey = "45"
+                Survey = "45",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),
             });
             //2.2
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("ED26E72B1C7248BEAEA7898C49B5952D"),
-                Survey = "26"
+                Survey = "26",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("19752857EA39422990F8A14F0695B042"),
             });
             //2.3
-            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
+            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("79BFC18677754C4F83E16B5416D59A50"),
-                Survey = "56"
+                Survey = "56",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("0363C650FC4F4DF4B0A4912DC7CA3151"),
             });
             //2.4
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("FD931C8BDF99431E926725F0FF4E37E4"),
-                Survey = "68"
+                Survey = "68",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("043CE18440894614BAC8A1BD300C8A7C"),
             });
             //2.5
-            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
+            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("240D13E3719A487FBB69D807498C0302"),
-                Survey = "49"
+                Survey = "49",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("68EF94103A7C443DAB0C1E2B15939415"),
             });
             //2.6
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("65E416BF15D744B29D007832B177496B"),
-                Survey = "15"
+                Survey = "15",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("7EE1120989FC43619D647941A21BAA23"),
             });
             //2.7
-            modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
+            modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("2B2B48D9EE3148F4A49565AF6C8F8859"),
-                Survey = "125"
+                Survey = "125",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("8FD9EC8F2BC34F369D700E6AD5B10B14"),
             });
             //2.8
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("3BA78A8FFE794AD9B414545ED0F51CBB"),
-                Survey = "157"
+                Survey = "157",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("3529A503C48F47ADAD439FDCB8744D89"),
             });
             //2.9
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("4F9711823A724E288BE2118555B01606"),
-                Survey = "0"
+                Survey = "0",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse("CF169ADBCDCD4F2E963534B48235FBA5"),
             });
+
+
+            
+            modelBuilder.Entity<PriceMultiplier>().HasData(new PriceMultiplier()
+            {
+                Id = Guid.Parse("9D9C970021374C819C44C75FB32E5E83"),
+                Name = "VGoodGood",
+                Multiplier = 1.0,
+            });
+            modelBuilder.Entity<PriceMultiplier>().HasData(new PriceMultiplier()
+            {
+                Id = Guid.Parse("7A9A08BB8453401A887E3E91E834F24F"),
+                Name = "Moderate",
+                Multiplier = 1.25,
+            });
+            modelBuilder.Entity<PriceMultiplier>().HasData(new PriceMultiplier()
+            {
+                Id = Guid.Parse("FCB99FE67CBE436BB52180EB9FA2D12B"),
+                Name = "Satisfactory",
+                Multiplier = 1.5,
+            });
+            modelBuilder.Entity<PriceMultiplier>().HasData(new PriceMultiplier()
+            {
+                Id = Guid.Parse("F52A50D2980A4061AB046C961FA5A37D"),
+                Name = "Bad",
+                Multiplier = 2.0,
+            });
+            modelBuilder.Entity<PriceMultiplier>().HasData(new PriceMultiplier()
+            {
+                Id = Guid.Parse("837A442FFB9643EFA5A7167323B15823"),
+                Name = "Vbad",
+                Multiplier = 3.0,
+            });
+
+
 
             //
 
@@ -186,16 +258,16 @@ namespace HA.Persistence
             });
 
             //
-            //.1
+            //.1k
             modelBuilder.Entity<Zone>().HasData(new Zone
             { 
                 Id = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),//encje.txt
                 ZoneName = "S1",
                 SurveyFirstId = Guid.Parse("094234BEB6C7438AAE175FA53324F5BB"),//1.1
-                SurveySecondId = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),//2.1
+                SurveySecondId = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),//1.2
                 DefaultPrice = 3.50M
             });
-            //.2
+            //.2k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("19752857EA39422990F8A14F0695B042"),
@@ -204,7 +276,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("ED26E72B1C7248BEAEA7898C49B5952D"),
                 DefaultPrice = 3.50M
             });
-            //.3
+            //.3k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("0363C650FC4F4DF4B0A4912DC7CA3151"),
@@ -213,7 +285,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("79BFC18677754C4F83E16B5416D59A50"),
                 DefaultPrice = 3.50M
             });
-            //.4
+            //.4k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("043CE18440894614BAC8A1BD300C8A7C"),
@@ -222,7 +294,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("FD931C8BDF99431E926725F0FF4E37E4"),
                 DefaultPrice = 4.50M
             });
-            //.5
+            //.5k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("68EF94103A7C443DAB0C1E2B15939415"),
@@ -231,7 +303,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("240D13E3719A487FBB69D807498C0302"),
                 DefaultPrice = 4.50M
             });
-            //.6
+            //.6k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("7EE1120989FC43619D647941A21BAA23"),
@@ -240,7 +312,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("65E416BF15D744B29D007832B177496B"),
                 DefaultPrice = 4.50M
             });
-            //.7
+            //.7k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("8FD9EC8F2BC34F369D700E6AD5B10B14"),
@@ -249,7 +321,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("2B2B48D9EE3148F4A49565AF6C8F8859"),
                 DefaultPrice = 6.00M
             });
-            //.8
+            //.8k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("3529A503C48F47ADAD439FDCB8744D89"),
@@ -258,7 +330,7 @@ namespace HA.Persistence
                 SurveySecondId = Guid.Parse("3BA78A8FFE794AD9B414545ED0F51CBB"),
                 DefaultPrice = 6.00M
             });
-            //.9
+            //.9k
             modelBuilder.Entity<Zone>().HasData(new Zone
             {
                 Id = Guid.Parse("CF169ADBCDCD4F2E963534B48235FBA5"),
