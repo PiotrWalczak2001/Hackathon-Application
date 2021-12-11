@@ -25,7 +25,7 @@ namespace HA.Application.Features.Surveys.Second.Queries.TakeFakeSurveySecond
         public async Task<FakeSurveySecondVm> Handle(TakeFakeSurveySecondQuery request, CancellationToken cancellationToken)
         {
             var fakeSurvey = await _surveySecondRepository.TakeFakeSurveySecond(request.ZoneId);
-            _zoneRepository.RefreshSurveys(fakeSurvey.ZoneId);
+            await _zoneRepository.RefreshSecondSurveys(fakeSurvey.ZoneId, fakeSurvey.Id);
             return _mapper.Map<FakeSurveySecondVm>(fakeSurvey);
         }
     }
