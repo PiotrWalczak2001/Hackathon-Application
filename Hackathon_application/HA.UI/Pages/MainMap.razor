@@ -2,3 +2,31 @@
 
 <h3>MainMap</h3>
 
+@if (Zones == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Zone name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var zone in Zones)
+            {
+                <tr>
+                    <td>@zone.Id</td>
+                    <td>@zone.ZoneName</td>
+                    <td>
+                        <a href="@($"zoneDetails/{zone.Id}")" class="btn btn-success">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

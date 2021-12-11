@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using HA.Shared;
+using HA.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace HA.UI.Profiles
     {
         public Mappings()
         {
-
+            CreateMap<Zone, ZoneListViewModel>().ReverseMap();
         }
     }
 }

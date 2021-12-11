@@ -14,8 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\HA.Shared\HA.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,4 @@
+using HA.UI.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,9 @@ namespace HA.UI
 
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            var host = new Uri("https://localhost:44353/");
+
+            builder.Services.AddHttpClient<IZoneService, ZoneService>(client => client.BaseAddress = new Uri(host, "api/zone"));
 
             await builder.Build().RunAsync();
         }
