@@ -43,7 +43,7 @@ namespace HA.Api
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Bookshelf API"
+                    Title = "HackathonApp API"
                 });
 
             });

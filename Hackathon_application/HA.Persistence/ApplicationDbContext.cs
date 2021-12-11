@@ -29,7 +29,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("094234BEB6C7438AAE175FA53324F5BB"),
                 Survey = "21",
-                SurveyDate = DateTime.Now,
+          //      SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),
             });
             //1.2
@@ -37,7 +37,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("2B9B964F85EF4E248BD339CD8198AAF8"),
                 Survey = "62",
-                SurveyDate = DateTime.Now,
+          //      SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("19752857EA39422990F8A14F0695B042"),
             });
 
@@ -46,7 +46,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("80D8E42EDD52463E823DB9A0B887530B"),
                 Survey = "180",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("0363C650FC4F4DF4B0A4912DC7CA3151"),
             });
             //1.4
@@ -54,7 +54,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("010067D643B24F19BA0F40A175BD8185"),
                 Survey = "250",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("043CE18440894614BAC8A1BD300C8A7C"),
             });
             //1.5
@@ -62,7 +62,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("CF680241854C48F2925CD15C49ED1AF1"),
                 Survey = "87",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("68EF94103A7C443DAB0C1E2B15939415"),
             });
             //1.6
@@ -70,7 +70,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("DEDDF733AB674737A7B6EC17A6E4B3AD"),
                 Survey = "19",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("7EE1120989FC43619D647941A21BAA23"),
             });
             //1.7
@@ -78,7 +78,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("990B0236B37741F3BB06BDAEC289BE2D"),
                 Survey = "137",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("8FD9EC8F2BC34F369D700E6AD5B10B14"),
             });
             //1.8
@@ -86,7 +86,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("CBE23EFD4DBB4CD4B83AAE353DB0D954"),
                 Survey = "300",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("3529A503C48F47ADAD439FDCB8744D89"),
             });
             //1.9
@@ -94,7 +94,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("B2AF4BB0708E4B908A90E1C25A28E9FA"),
                 Survey = "1",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("CF169ADBCDCD4F2E963534B48235FBA5"),
             });
             //2.1
@@ -102,7 +102,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),
                 Survey = "45",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),
             });
             //2.2
@@ -110,7 +110,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("ED26E72B1C7248BEAEA7898C49B5952D"),
                 Survey = "26",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("19752857EA39422990F8A14F0695B042"),
             });
             //2.3
@@ -118,7 +118,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("79BFC18677754C4F83E16B5416D59A50"),
                 Survey = "56",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("0363C650FC4F4DF4B0A4912DC7CA3151"),
             });
             //2.4
@@ -126,7 +126,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("FD931C8BDF99431E926725F0FF4E37E4"),
                 Survey = "68",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("043CE18440894614BAC8A1BD300C8A7C"),
             });
             //2.5
@@ -134,7 +134,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("240D13E3719A487FBB69D807498C0302"),
                 Survey = "49",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("68EF94103A7C443DAB0C1E2B15939415"),
             });
             //2.6
@@ -142,7 +142,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("65E416BF15D744B29D007832B177496B"),
                 Survey = "15",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("7EE1120989FC43619D647941A21BAA23"),
             });
             //2.7
@@ -150,7 +150,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("2B2B48D9EE3148F4A49565AF6C8F8859"),
                 Survey = "125",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("8FD9EC8F2BC34F369D700E6AD5B10B14"),
             });
             //2.8
@@ -158,7 +158,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("3BA78A8FFE794AD9B414545ED0F51CBB"),
                 Survey = "157",
-                SurveyDate = DateTime.Now,
+            //    SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("3529A503C48F47ADAD439FDCB8744D89"),
             });
             //2.9
@@ -166,7 +166,7 @@ namespace HA.Persistence
             {
                 Id = Guid.Parse("4F9711823A724E288BE2118555B01606"),
                 Survey = "0",
-                SurveyDate = DateTime.Now,
+             //   SurveyDate = DateTime.Now,
                 ZoneId = Guid.Parse("CF169ADBCDCD4F2E963534B48235FBA5"),
             });
 

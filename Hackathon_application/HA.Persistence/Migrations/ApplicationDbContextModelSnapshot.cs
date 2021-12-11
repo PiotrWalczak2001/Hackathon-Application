@@ -25,8 +25,8 @@ namespace HA.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<float>("Multiplier")
-                        .HasColumnType("real");
+                    b.Property<double>("Multiplier")
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -40,6 +40,48 @@ namespace HA.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PriceMultipliers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("9d9c9700-2137-4c81-9c44-c75fb32e5e83"),
+                            Multiplier = 1.0,
+                            Name = "VGoodGood",
+                            ThresholdFirstId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ThresholdSecondId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("7a9a08bb-8453-401a-887e-3e91e834f24f"),
+                            Multiplier = 1.25,
+                            Name = "Moderate",
+                            ThresholdFirstId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ThresholdSecondId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("fcb99fe6-7cbe-436b-b521-80eb9fa2d12b"),
+                            Multiplier = 1.5,
+                            Name = "Satisfactory",
+                            ThresholdFirstId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ThresholdSecondId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("f52a50d2-980a-4061-ab04-6c961fa5a37d"),
+                            Multiplier = 2.0,
+                            Name = "Bad",
+                            ThresholdFirstId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ThresholdSecondId = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            Id = new Guid("837a442f-fb96-43ef-a5a7-167323b15823"),
+                            Multiplier = 3.0,
+                            Name = "Vbad",
+                            ThresholdFirstId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ThresholdSecondId = new Guid("00000000-0000-0000-0000-000000000000")
+                        });
                 });
 
             modelBuilder.Entity("HA.Domain.Enitites.SurveyFirst", b =>
@@ -54,58 +96,76 @@ namespace HA.Persistence.Migrations
                     b.Property<DateTime>("SurveyDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("ZoneId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.ToTable("SurveyFirst");
+                    b.ToTable("FirstSurveys");
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("094234be-b6c7-438a-ae17-5fa53324f5bb"),
                             Survey = "21",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("f610e3de-a686-4987-8bcf-457c009fd47f")
+                        },
+                        new
+                        {
+                            Id = new Guid("2b9b964f-85ef-4e24-8bd3-39cd8198aaf8"),
+                            Survey = "62",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("19752857-ea39-4229-90f8-a14f0695b042")
                         },
                         new
                         {
                             Id = new Guid("80d8e42e-dd52-463e-823d-b9a0b887530b"),
                             Survey = "180",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("0363c650-fc4f-4df4-b0a4-912dc7ca3151")
+                        },
+                        new
+                        {
+                            Id = new Guid("010067d6-43b2-4f19-ba0f-40a175bd8185"),
+                            Survey = "250",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("043ce184-4089-4614-bac8-a1bd300c8a7c")
                         },
                         new
                         {
                             Id = new Guid("cf680241-854c-48f2-925c-d15c49ed1af1"),
                             Survey = "87",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("68ef9410-3a7c-443d-ab0c-1e2b15939415")
+                        },
+                        new
+                        {
+                            Id = new Guid("deddf733-ab67-4737-a7b6-ec17a6e4b3ad"),
+                            Survey = "19",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("7ee11209-89fc-4361-9d64-7941a21baa23")
                         },
                         new
                         {
                             Id = new Guid("990b0236-b377-41f3-bb06-bdaec289be2d"),
                             Survey = "137",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("8fd9ec8f-2bc3-4f36-9d70-0e6ad5b10b14")
                         },
                         new
                         {
-                            Id = new Guid("b4682943-ded9-435b-a689-45d5103b6f33"),
-                            Survey = "45",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = new Guid("cbe23efd-4dbb-4cd4-b83a-ae353db0d954"),
+                            Survey = "300",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("3529a503-c48f-47ad-ad43-9fdcb8744d89")
                         },
                         new
                         {
-                            Id = new Guid("79bfc186-7775-4c4f-83e1-6b5416d59a50"),
-                            Survey = "56",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("240d13e3-719a-487f-bb69-d807498c0302"),
-                            Survey = "49",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("2b2b48d9-ee31-48f4-a495-65af6c8f8859"),
-                            Survey = "125",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = new Guid("b2af4bb0-708e-4b90-8a90-e1c25a28e9fa"),
+                            Survey = "1",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("cf169adb-cdcd-4f2e-9635-34b48235fba5")
                         });
                 });
 
@@ -121,70 +181,76 @@ namespace HA.Persistence.Migrations
                     b.Property<DateTime>("SurveyDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("ZoneId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.ToTable("SurveySecond");
+                    b.ToTable("SecondSurveys");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2b9b964f-85ef-4e24-8bd3-39cd8198aaf8"),
-                            Survey = "62",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("010067d6-43b2-4f19-ba0f-40a175bd8185"),
-                            Survey = "250",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("deddf733-ab67-4737-a7b6-ec17a6e4b3ad"),
-                            Survey = "19",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("cbe23efd-4dbb-4cd4-b83a-ae353db0d954"),
-                            Survey = "300",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("b2af4bb0-708e-4b90-8a90-e1c25a28e9fa"),
-                            Survey = "1",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = new Guid("b4682943-ded9-435b-a689-45d5103b6f33"),
+                            Survey = "45",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("f610e3de-a686-4987-8bcf-457c009fd47f")
                         },
                         new
                         {
                             Id = new Guid("ed26e72b-1c72-48be-aea7-898c49b5952d"),
                             Survey = "26",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("19752857-ea39-4229-90f8-a14f0695b042")
+                        },
+                        new
+                        {
+                            Id = new Guid("79bfc186-7775-4c4f-83e1-6b5416d59a50"),
+                            Survey = "56",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("0363c650-fc4f-4df4-b0a4-912dc7ca3151")
                         },
                         new
                         {
                             Id = new Guid("fd931c8b-df99-431e-9267-25f0ff4e37e4"),
                             Survey = "68",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("043ce184-4089-4614-bac8-a1bd300c8a7c")
+                        },
+                        new
+                        {
+                            Id = new Guid("240d13e3-719a-487f-bb69-d807498c0302"),
+                            Survey = "49",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("68ef9410-3a7c-443d-ab0c-1e2b15939415")
                         },
                         new
                         {
                             Id = new Guid("65e416bf-15d7-44b2-9d00-7832b177496b"),
                             Survey = "15",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("7ee11209-89fc-4361-9d64-7941a21baa23")
+                        },
+                        new
+                        {
+                            Id = new Guid("2b2b48d9-ee31-48f4-a495-65af6c8f8859"),
+                            Survey = "125",
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("8fd9ec8f-2bc3-4f36-9d70-0e6ad5b10b14")
                         },
                         new
                         {
                             Id = new Guid("3ba78a8f-fe79-4ad9-b414-545ed0f51cbb"),
                             Survey = "157",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("3529a503-c48f-47ad-ad43-9fdcb8744d89")
                         },
                         new
                         {
                             Id = new Guid("4f971182-3a72-4e28-8be2-118555b01606"),
                             Survey = "0",
-                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SurveyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ZoneId = new Guid("cf169adb-cdcd-4f2e-9635-34b48235fba5")
                         });
                 });
 

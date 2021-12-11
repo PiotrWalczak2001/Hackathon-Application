@@ -23,8 +23,8 @@ namespace HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst
         }
         public async Task<FakeSurveyFirstVm> Handle(TakeFakeSurveyFirstQuery request, CancellationToken cancellationToken)
         {
-            var fakeSurvey = await _surveyFirstRepository.TakeFakeSurveyFirst();
-            await _zoneRepository.RefreshSurveys();
+            var fakeSurvey = await _surveyFirstRepository.TakeFakeSurveyFirst(request.ZoneId);
+            _zoneRepository.RefreshSurveys(fakeSurvey.ZoneId);
             return _mapper.Map<FakeSurveyFirstVm>(fakeSurvey);
         }
     }

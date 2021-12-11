@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails;
+using HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst;
 using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
