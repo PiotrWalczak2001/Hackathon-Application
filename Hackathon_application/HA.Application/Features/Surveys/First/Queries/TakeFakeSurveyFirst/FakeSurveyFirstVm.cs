@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HA.Domain.Enitites
+namespace HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst
 {
-    public class SurveySecond
+    public class FakeSurveyFirstVm
     {
         public Guid Id { get; set; }
         public string Survey { get; set; }

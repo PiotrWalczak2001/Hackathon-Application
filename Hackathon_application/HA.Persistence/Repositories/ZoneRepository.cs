@@ -14,5 +14,13 @@ namespace HA.Persistence.Repositories
         {
 
         }
+
+        public void RefreshSurveys(Guid zoneId)
+        {
+            var newSurvey = _dbContext.FirstSurveys.Where(s => s.ZoneId == zoneId).OrderBy(x => x.SurveyDate).FirstOrDefault();
+            var zoneToUpdate = _dbContext.Zones.FirstOrDefault(z => z.Id == zoneId);
+            zoneToUpdate.SurveyFirstId = newSurvey.Id;
+        }
+
     }
 }
