@@ -28,14 +28,19 @@ namespace HA.Persistence
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
                 Id = Guid.Parse("094234BEB6C7438AAE175FA53324F5BB"),
-                Survey = "21"
+                Survey = "21",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse(""),
             });
             //1.2
             modelBuilder.Entity<SurveySecond>().HasData(new SurveySecond
             {
                 Id = Guid.Parse("2B9B964F85EF4E248BD339CD8198AAF8"),
-                Survey = "62"
+                Survey = "62",
+                SurveyDate = DateTime.Now,
+                ZoneId = Guid.Parse(""),
             });
+
             //1.3
             modelBuilder.Entity<SurveyFirst>().HasData(new SurveyFirst
             {
@@ -192,7 +197,7 @@ namespace HA.Persistence
                 Id = Guid.Parse("F610E3DEA68649878BCF457C009FD47F"),//encje.txt
                 ZoneName = "S1",
                 SurveyFirstId = Guid.Parse("094234BEB6C7438AAE175FA53324F5BB"),//1.1
-                SurveySecondId = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),//2.1
+                SurveySecondId = Guid.Parse("B4682943DED9435BA68945D5103B6F33"),//1.2
                 DefaultPrice = 3.50M
             });
             //.2
