@@ -24,6 +24,7 @@ namespace HA.UI
             var host = new Uri("https://localhost:44353/");
 
             builder.Services.AddHttpClient<IZoneService, ZoneService>(client => client.BaseAddress = new Uri(host, "api/zone"));
+            builder.Services.AddHttpClient<ISurveyService, SurveyService>(client => client.BaseAddress = new Uri(host, "api/survey"));
 
             await builder.Build().RunAsync();
         }
