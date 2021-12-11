@@ -12,6 +12,7 @@ using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
 using HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails;
 using HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst;
 using HA.Application.Features.Surveys.Second.Queries.TakeFakeSurveySecond;
+using HA.Application.Features.Zone.Queries.CalculateTotalPrice;
 
 namespace HA.Application.Profiles
 {
@@ -21,6 +22,7 @@ namespace HA.Application.Profiles
         {
             CreateMap<Zone, ZoneListVm>().ReverseMap();
             CreateMap<Zone, ZoneDetailsVm>().ReverseMap();
+            CreateMap<Zone, CalculatedZoneVm>().ReverseMap();
 
             CreateMap<PriceMultiplier, MultiplierListVm>().ReverseMap();
 
