@@ -19,15 +19,16 @@ namespace HA.UI.Services
             _mapper = mapper;
         }
 
-        public async Task TakeFakeData()
+        public async Task<List<ZoneListViewModel>> TakeFakeData()
         {
-            string relativeUri = $"{_httpClient.BaseAddress}/takeAllFakeSurveyss";
+            string relativeUri = $"{_httpClient.BaseAddress}/takeAllFakeSurveys";
 
-            var data = await JsonSerializer.DeserializeAsync<ICollection<FakeDataListViewModel>>(
+            var data = await JsonSerializer.DeserializeAsync<ICollection<ZoneListViewModel>>(
                 await _httpClient.GetStreamAsync(relativeUri),
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
-            _mapper.Map<List<FakeDataListViewModel>>(data);
+           return _mapper.Map<List<ZoneListViewModel>>(data);
+
         }
     }
 }
