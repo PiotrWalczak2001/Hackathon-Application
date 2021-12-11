@@ -9,5 +9,6 @@ namespace HA.UI.ViewModels
     {
         public Guid Id { get; set; }
         public string ZoneName { get; set; }
+        public decimal TotalPrice { get; set; }
     }
 }

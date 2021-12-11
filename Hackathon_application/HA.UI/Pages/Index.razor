@@ -1,4 +1,7 @@
 ﻿@page "/"
+
+
+
 <style type="text/css">
     .container_main {
         display: flex;
@@ -32,26 +35,32 @@
         width: 25px;
         height: 25px;
         border: 1px solid black;
-        
     }
-    .dot p {
-        padding-left: 15%;
-    }
+
+        .dot p {
+            padding-left: 15%;
+        }
+
     .green_dot {
         background: green;
     }
+
     .yellow_dot {
         background: yellow;
     }
+
     .red_dot {
         background: red;
     }
+
     .brown_dot {
         background: brown;
     }
+
     .black_dot {
         background: black;
     }
+
     #s9 {
         top: 33vh;
         left: 36vw;
@@ -98,61 +107,84 @@
     }
 </style>
 
-<div class="container_main">
-    <div class="map_container">
-        <img src="https://iv.pl/images/11dac6eac707fb1d25c39a9704736385.png" class="map_main" alt="Kraków strefy parkowania" border="0" />
-        <a>
-            <div class="dot position-absolute" id="s9">
-                <p>s9</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s8">
-                <p>s8</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s7">
-                <p>s7</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s6">
-                <p>s6</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s5">
-                <p>s5</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s4">
-                <p>s4</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s3">
-                <p>s3</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s2">
-                <p>s2</p>
-            </div>
-        </a>
-        <a>
-            <div class="dot position-absolute" id="s1">
-                <p>s1</p>
-            </div>
-        </a>
-    </div>
-    <div class="data_container">
-        <table class="table">
-            <tr>
-                <th>Aktualne ceny w strefach</th>
-            </tr>
-        </table>
-    </div>
-</div>
+@if (Zones == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
 
+    <div class="container_main">
+        <div class="map_container">
+            <img src="https://iv.pl/images/11dac6eac707fb1d25c39a9704736385.png" class="map_main" alt="Kraków strefy parkowania" border="0" />
+            <a>
+                <div class="dot position-absolute" id="s9">
+                    <p>s9</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s8">
+                    <p>s8</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s7">
+                    <p>s7</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s6">
+                    <p>s6</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s5">
+                    <p>s5</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s4">
+                    <p>s4</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s3">
+                    <p>s3</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s2">
+                    <p>s2</p>
+                </div>
+            </a>
+            <a>
+                <div class="dot position-absolute" id="s1">
+                    <p>s1</p>
+                </div>
+            </a>
+        </div>
+        <div class="data_container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nazwa strefy</th>
+                            <th>Aktualne ceny w strefach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var zone in Zones)
+                        {
+
+                            <tr>
+                                <td>@zone.ZoneName</td>
+                                <td>@zone.TotalPrice.ToString("c")</td>
+                            </tr>
+
+                        }
+                    </tbody>
+
+                </table>
+</div>
+    </div>
+
+}

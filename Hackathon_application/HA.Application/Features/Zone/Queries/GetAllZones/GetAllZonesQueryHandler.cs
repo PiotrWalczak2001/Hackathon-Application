@@ -21,7 +21,7 @@ namespace HA.Application.Features.Zone.Queries.GetAllZones
         }
         public async Task<List<ZoneListVm>> Handle(GetAllZonesQuery request, CancellationToken cancellationToken)
         {
-            var zoneList = await _zoneRepository.GetListOfAll();
+            var zoneList = (await _zoneRepository.GetListOfAll()).OrderBy(z => z.ZoneName);
             return _mapper.Map<List<ZoneListVm>>(zoneList);
         }
     }
