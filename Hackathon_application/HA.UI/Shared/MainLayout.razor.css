@@ -1,4 +1,6 @@
 .page {
+    height: 1920px;
+    width: 1080px;
     position: relative;
     display: flex;
     flex-direction: column;
