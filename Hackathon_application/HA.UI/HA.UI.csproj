@@ -17,4 +17,8 @@
     <ProjectReference Include="..\HA.Shared\HA.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 </Project>
