@@ -24,8 +24,8 @@
 }
 
 .logo_nav {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
 }
 .oi {
     width: 2rem;
@@ -45,7 +45,7 @@
         display: flex;
         align-items: center;
         line-height: 3rem;
-    }
+}
 
 .nav-item a.active {
     background-color: rgba(255,255,255,0.25);

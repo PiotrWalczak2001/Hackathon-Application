@@ -15,12 +15,14 @@
     }
 
     .map_main {
-        padding: 3%;
-        width: 100%;
-        height: auto;
+        height: 95%;
+        width: 95%;
+        padding-top: 5%;
+        border: none;
     }
 
     .data_container {
+        padding: 3%;
         width: 40%;
         height: auto;
     }
@@ -40,10 +42,9 @@ else
 
 <div class="container_main">
     <div class="map_container">
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1oRY2pnth-HEjiNt85d26lpaTDLz0nTmx&ehbc=2E312F" width="640" height="480"></iframe>
+        <iframe class ="map_main" src="https://www.google.com/maps/d/u/0/embed?mid=1oRY2pnth-HEjiNt85d26lpaTDLz0nTmx&ehbc=2E312F"></iframe>
     </div>
     <div class="data_container">
-        <button type="submit" @onclick="LoadData">Get new data</button>
         <table class="table">
             <thead>
                 <tr>
@@ -52,18 +53,18 @@ else
                 </tr>
             </thead>
             <tbody>
-                @foreach (var zone in Zones)
-                {
+            @foreach (var zone in Zones)
+            {
 
-                    <tr>
-                        <td>@zone.ZoneName</td>
-                        <td>@zone.TotalPrice.ToString("c")</td>
-                    </tr>
+                <tr>
+                    <td>@zone.ZoneName</td>
+                    <td>@zone.TotalPrice.ToString("c")</td>
+                </tr>
 
-                }
+            }
             </tbody>
-
         </table>
+        <button type="submit" @onclick="LoadData">Get new data</button>
     </div>
 </div>
 
