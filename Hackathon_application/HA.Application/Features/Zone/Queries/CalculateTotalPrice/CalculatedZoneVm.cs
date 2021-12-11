@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HA.Application.Features.Zone.Queries.GetZoneById
+namespace HA.Application.Features.Zone.Queries.CalculateTotalPrice
 {
-    public class ZoneDetailsVm
+    public class CalculatedZoneVm
     {
         public Guid Id { get; set; }
         public string ZoneName { get; set; }

@@ -6,6 +6,7 @@ using HA.Application.Features.Surveys.First.Queries.GetFirstSurveyDetails;
 using HA.Application.Features.Surveys.First.Queries.TakeFakeSurveyFirst;
 using HA.Application.Features.Surveys.Second.Queries.GetFirstSurveyDetails;
 using HA.Application.Features.Surveys.Second.Queries.TakeFakeSurveySecond;
+using HA.Application.Features.Zone.Queries.CalculateTotalPrice;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -44,14 +45,8 @@ namespace HA.Api.Controllers
             await _mediator.Send(queryFirst);
             var querySecond = new TakeFakeSurveySecondQuery() { ZoneId = id };
             await _mediator.Send(querySecond);
-            return Ok();
+            var queryToCalculate = new CalculateTotalPriceQuery() { ZoneId = id };
+            return Ok(await _mediator.Send(queryToCalculate));
         }
-        /*
-        [HttpGet("takeFakeSurveySecond/{id}")]
-        public async Task<ActionResult<FakeSurveyFirstVm>> TakeFakeSurveySecond(Guid id)
-        {
-            var query = new TakeFakeSurveySecondQuery() { ZoneId = id };
-            return Ok(await _mediator.Send(query));
-        } */
     }
 }
