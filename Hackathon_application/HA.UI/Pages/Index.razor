@@ -114,78 +114,78 @@
 else
 {
 
-    <div class="container_main">
-        <div class="map_container">
-            <img src="https://iv.pl/images/11dac6eac707fb1d25c39a9704736385.png" class="map_main" alt="Kraków strefy parkowania" border="0" />
-            <a>
-                <div class="dot position-absolute" id="s9">
-                    <p>s9</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s8">
-                    <p>s8</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s7">
-                    <p>s7</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s6">
-                    <p>s6</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s5">
-                    <p>s5</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s4">
-                    <p>s4</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s3">
-                    <p>s3</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s2">
-                    <p>s2</p>
-                </div>
-            </a>
-            <a>
-                <div class="dot position-absolute" id="s1">
-                    <p>s1</p>
-                </div>
-            </a>
-        </div>
-        <div class="data_container">
-            <button type="submit" @onclick="LoadData">Take new measurement</button>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nazwa strefy</th>
-                            <th>Aktualne ceny w strefach</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var zone in Zones)
-                        {
-
-                            <tr>
-                                <td>@zone.ZoneName</td>
-                                <td>@zone.TotalPrice.ToString("c")</td>
-                            </tr>
-
-                        }
-                    </tbody>
-
-                </table>
-</div>
+<div class="container_main">
+    <div class="map_container">
+        <img src="https://iv.pl/images/11dac6eac707fb1d25c39a9704736385.png" class="map_main" alt="Kraków strefy parkowania" border="0" />
+        <a>
+            <div class="dot position-absolute" id="s9">
+                <p>s9</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s8">
+                <p>s8</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s7">
+                <p>s7</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s6">
+                <p>s6</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s5">
+                <p>s5</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s4">
+                <p>s4</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s3">
+                <p>s3</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s2">
+                <p>s2</p>
+            </div>
+        </a>
+        <a>
+            <div class="dot position-absolute" id="s1">
+                <p>s1</p>
+            </div>
+        </a>
     </div>
+    <div class="data_container">
+        <button type="submit" @onclick="LoadData">Take new measurement</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nazwa strefy</th>
+                    <th>Aktualne ceny w strefach</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var zone in Zones)
+                {
+
+                    <tr>
+                        <td>@zone.ZoneName</td>
+                        <td>@zone.TotalPrice.ToString("c")</td>
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
 
 }

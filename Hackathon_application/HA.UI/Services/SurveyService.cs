@@ -28,7 +28,8 @@ namespace HA.UI.Services
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
            return _mapper.Map<List<ZoneListViewModel>>(data);
-
         }
+
+        
     }
 }

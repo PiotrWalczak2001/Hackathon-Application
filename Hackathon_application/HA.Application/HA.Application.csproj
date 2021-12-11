@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\PriceMultiplier\Commands\" />
-    <Folder Include="Features\Surveys\First\Commands\" />
-    <Folder Include="Features\Surveys\Second\Commands\" />
-    <Folder Include="Features\Zone\Commands\" />
+    <Compile Remove="Features\PriceMultiplier\Commands\**" />
+    <Compile Remove="Features\Zone\Commands\**" />
+    <EmbeddedResource Remove="Features\PriceMultiplier\Commands\**" />
+    <EmbeddedResource Remove="Features\Zone\Commands\**" />
+    <None Remove="Features\PriceMultiplier\Commands\**" />
+    <None Remove="Features\Zone\Commands\**" />
   </ItemGroup>
 
   <ItemGroup>

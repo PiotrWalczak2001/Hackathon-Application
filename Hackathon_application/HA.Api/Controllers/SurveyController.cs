@@ -24,20 +24,20 @@ namespace HA.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
         [HttpGet("firstDetails/{id}", Name = "GetFirstSurveyDetails")]
-        public async Task<ActionResult<FirstSurveyDetailsVm>>GetFirstSurveyDetailsById(Guid id)
+        public async Task<ActionResult<FirstSurveyDetailsVm>> GetFirstSurveyDetailsById(Guid id)
         {
-            var query = new GetFirstSurveyDetailsQuery() {FirstSurveyId = id};
+            var query = new GetFirstSurveyDetailsQuery() { FirstSurveyId = id };
             return Ok(await _mediator.Send(query));
         }
 
         [HttpGet("secondDetails/{id}", Name = "GetSecondSurveyDetails")]
         public async Task<ActionResult<SecondSurveyDetailsVm>> GetSecondSurveyDetailsById(Guid id)
         {
-            var query = new GetFirstSurveyDetailsQuery() {FirstSurveyId = id};
+            var query = new GetFirstSurveyDetailsQuery() { FirstSurveyId = id };
             return Ok(await _mediator.Send(query));
-        } 
+        }
 
         [HttpGet("takeFakeSurveys/{id}")]
         public async Task<ActionResult<FakeSurveyFirstVm>> TakeFakeSurvey(Guid id)
@@ -67,21 +67,6 @@ namespace HA.Api.Controllers
             return Ok(allCalculatedZonesVms);
         }
 
-        [HttpGet("takeAllFakeSurveyss")]
-        public async Task<ActionResult> TakeAllFakeSurveyss()
-        {
-            var zones = await _mediator.Send(new GetAllZonesQuery());
-            List<CalculatedZoneVm> allCalculatedZonesVms = new List<CalculatedZoneVm>();
-            foreach (var zone in zones)
-            {
-                var queryFirst = new TakeFakeSurveyFirstQuery() { ZoneId = zone.Id };
-                await _mediator.Send(queryFirst);
-                var querySecond = new TakeFakeSurveySecondQuery() { ZoneId = zone.Id };
-                await _mediator.Send(querySecond);
-                var queryToCalculate = new CalculateTotalPriceQuery() { ZoneId = zone.Id };
-                allCalculatedZonesVms.Add(await _mediator.Send(queryToCalculate));
-            }
-            return NoContent();
-        }
+
     }
 }
