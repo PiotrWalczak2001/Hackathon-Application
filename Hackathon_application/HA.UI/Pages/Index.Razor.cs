@@ -22,10 +22,6 @@ namespace HA.UI.Pages
         protected async override Task OnInitializedAsync()
         {
             Zones = (await ZoneService.GetAllZones()).ToList();
-            foreach (var zone in )
-            {
-
-            }
         }
 
         protected async Task LoadData()
